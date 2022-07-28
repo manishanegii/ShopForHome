@@ -1,0 +1,105 @@
+<!-- Displaying the All the products -->
+
+<div class="card-top container-fluid">
+    <div class="container d-flex">
+
+        <div class="item">
+            <a (click)="filter('')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://cdn-icons-png.flaticon.com/512/3081/3081840.png" alt="">
+                <h6>All Products</h6>
+            </a>
+        </div>
+
+        <!-- Displaying the home icon -->
+        <div class="item">
+            <a (click)="filter('Home')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://www.thespruce.com/thmb/6aVhXdAqLnr26163zF3w1Ol0-zc=/420x0/filters:no_upscale():max_bytes(150000):strip_icc()/How-to-organise-your-kitchen-11-ed00eb4dca79463ab8e7316ba93b7498.jpg"
+                    alt="">
+                <h6>Home & Kitchen </h6>
+            </a>
+        </div>
+        <!-- Displaying the grocery Icon -->
+        <div class="item">
+            <a (click)="filter('Grocery')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://media.istockphoto.com/photos/groceries-picture-id171302954?k=20&m=171302954&s=612x612&w=0&h=kDpFXA8IoG22Uxog3YUmWvzBRzwyibd6r4S2v5z-Mno="
+                    alt="">
+                <h6> Grocery </h6>
+            </a>
+        </div>
+
+        <!-- Displaying the Fashion Icon -->
+        <div class="item">
+            <a (click)="filter('Clothing')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Event/Gw/PD22/QC/PC-PFF/clothing-372-232._SY232_CB633122219_.jpg"
+                    alt="">
+                <h6> Clothing </h6>
+            </a>
+        </div>
+        <!-- Displaying the Beauty Icon -->
+        <div class="item">
+            <a (click)="filter('Beauty')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Fashion/Event/Gw/PD22/QC/PC-WF/beauty-372-232._SY232_CB633118924_.jpg"
+                    alt="">
+                <h6> Beauty </h6>
+            </a>
+        </div>
+
+        <!-- Displaying the Sports Icon -->
+        <div class="item">
+            <a (click)="filter('Sports')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://th.bing.com/th/id/OIP.vh6I1P1DZcDOuVWQi-mVPQHaEs?w=246&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7"
+                    alt="">
+                <h6> Sports </h6>
+            </a>
+        </div>
+        <!-- Displaying the Electronics Icon -->
+        <div class="item">
+            <a (click)="filter('Electronics')">
+                <img style="width:100px;margin-top: 12px;"
+                    src="https://cdn3.vectorstock.com/i/1000x1000/81/87/home-appliances-domestic-household-vector-20558187.jpg" alt="">
+                <h6> Eletronics </h6>
+            </a>
+        </div>
+    </div>
+    <p>    <img src="../../assets/background.png" alt="bg" height="100%" width="100%"></p>
+</div>
+
+
+    <div class="container">
+        <div class="row">
+            <ng-container *ngFor="let product of filterCategory | filter:searchKey:'pname'">
+                <div class="card col-md-3">
+                    <img class="card-img-top" src='../../assets/{{product.url}}'>
+                    <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                        {{product.pname}}</h5>
+                    <p><strong>Price:</strong>{{product.price}}</p>
+                    <button class="btn btn-primary" (click)="addtocart(product)">Add to Cart</button>
+                    <!-- <button class="btn btn-primary" onclick="openTab(event,'coupon')">Coupon-Discount</button> -->
+                </div>
+            </ng-container>
+        </div>
+    </div>
+<!-- </div> -->
+
+<!-- <div id="coupon" class="container">
+    <h5 class="text-centre"> Add Discount to Products</h5>
+    <for
+    <div class="row">
+        <ng-container *ngFor="let product of filterCategory | filter:searchKey:'pname'">
+            <div class="card col-md-3">
+                <img class="card-img-top" src='../../assets/{{product.url}}'>
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">
+                    {{product.pname}}</h5>
+                <p><strong>Price:</strong>{{product.price}}</p>
+                <button class="btn btn-primary" (click)="addtocart(product)">Add to Cart</button>
+                <button class="btn btn-primary" onclick="openTab(event,'coupon')">Coupon-Discount</button>
+            </div>
+        </ng-container>
+    </div>
+</div> -->
